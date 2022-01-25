@@ -1,9 +1,10 @@
 import Head from "next/head"
-import { Container } from "reactstrap"
+import { Button, Container } from "reactstrap"
 import { IArticle, IArticleFields } from "../../contentful"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { GetStaticPaths, GetStaticProps } from "next"
 import client from "../../contentful/index"
+import Link from "next/link"
 
 export default function Article({article}: {article: IArticle}) {
     return <>
@@ -12,7 +13,10 @@ export default function Article({article}: {article: IArticle}) {
     </Head>
     <Container>
         <h1 className="py-3">{article.fields.title}</h1>
-        <div className="py-2">{documentToReactComponents(article.fields.content)}</div>    
+        <div className="py-2">{documentToReactComponents(article.fields.content)}</div>
+        <Link href='/'>
+    <Button>Back</Button>
+    </Link>  
     </Container>
     </>
 }
