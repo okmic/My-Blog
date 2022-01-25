@@ -1,6 +1,5 @@
 import type { GetStaticProps } from 'next'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 import { IArticle, IArticleFields, IMain, IMainFields } from '../contentful'
 import client from '../contentful/index'
 import { Container, Row} from 'reactstrap'
@@ -8,9 +7,7 @@ import { Post } from '../components/Post'
 import { Main } from '../components/Main'
 
 
-const Home = ({ home, articles }: { home: IMain, articles: IArticle[] }) => {
-  return (
-    <div className={styles.app}>
+const Home = ({ home, articles }: { home: IMain, articles: IArticle[] }) => <>
       <Head>
         <title>{home.fields.title}</title>
       </Head>
@@ -35,9 +32,7 @@ const Home = ({ home, articles }: { home: IMain, articles: IArticle[] }) => {
         </Container>
 
       </main>
-    </div>
-  )
-}
+    </>
 
 export default Home
 

@@ -5,7 +5,7 @@ import NextNProgress from 'nextjs-progressbar'
 
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <>
+  return <div className='app'>
     <NextNProgress
   color="tomato"
   startPosition={0.3}
@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   showOnShallow={true}
 />
   <Component {...pageProps} />
-  </>
+  </div>
 }
 
 export default MyApp

@@ -1,5 +1,4 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import styles from '../styles/Home.module.css'
 
 type PropsType = {
   url: string | undefined
@@ -9,7 +8,7 @@ type PropsType = {
 }
 
 export const Main: React.FC<PropsType> = ({ url, title, description }) => <div
-  className={`text-center p-5 ${styles.colorTitle}`}
+  className='text-center p-5 colorTitle'
   style={{
     background: `url("http:${url}") no-repeat center / cover`,
     minHeight: 300
